@@ -28,6 +28,5 @@
     ```
 6. Example of usage
     
-    ``
-    poetry run synchronize --source-dir ./source_dir --replica-dir ./replica_dir --interval 30 --log-file console.
+    ``poetry run synchronize --source-dir ./source_dir --replica-dir ./replica_dir --interval 30 --log-file console.
     log --log-level DEBUG``
