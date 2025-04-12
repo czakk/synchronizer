@@ -1,0 +1,50 @@
+[project]
+name = "Synchronizer"
+version = "1.0.0"
+description = "Synchronize source dir with replica target"
+authors = [ { name = "Cezary Banaczyk", email = "banaczykczarek@gmail.com" }]
+requires-python = ">=3.12"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.scripts]
+synchronize = 'main:main'
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+black = "^24.0"
+mypy = "^1.8"
+isort = "^5.13"
+ruff = "^0.3"
+
+[tool.poetry.dependencies]
+schedule = "^1.2.2"
+
+[tool.ruff]
+src = ["src", "tests"]
+
+[tool.roof.lint]
+line-length = 120
+select = [
+    "E",  # pycodestyle (errors)
+    "W",  # pycodestyle (warnings)
+    "F",  # pyflakes
+    "I",  # isort
+    "N",  # pep8-naming
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+    "C4", # flake8-comprehensions
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 20
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
